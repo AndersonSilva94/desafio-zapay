@@ -11,11 +11,11 @@ describe('<Header />', () => {
     const { getByRole } = render(<Header />);
     expect(getByRole('navigation')).toBeInTheDocument();
   });
-  it('Possui os links Home, Últimos Lançamentos e Próximos Lançamentos', () => {
+  it('Possui os links Home, Lançamentos Passados e Próximos Lançamentos', () => {
     const { getAllByRole } = render(<Header />);
     const links = getAllByRole('link');
     expect(links[0].innerHTML).toBe('Home');
-    expect(links[1].innerHTML).toBe('Últimos Lançamentos');
+    expect(links[1].innerHTML).toBe('Lançamentos Passados');
     expect(links[2].innerHTML).toBe('Próximos Lançamentos');
   });
 });

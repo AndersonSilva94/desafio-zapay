@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import HeaderContainer from './styles';
 
 function Header() {
@@ -7,9 +8,15 @@ function Header() {
       <header>
         <h1>SpaceX</h1>
         <nav>
-          <a href="#home">Home</a>
-          <a href="#last">Últimos Lançamentos</a>
-          <a href="#next">Próximos Lançamentos</a>
+          <Link to="/">
+            Home
+          </Link>
+          <Link to="/old">
+            Lançamentos Passados
+          </Link>
+          <Link to="/next">
+            Próximos Lançamentos
+          </Link>
         </nav>
       </header>
     </HeaderContainer>
