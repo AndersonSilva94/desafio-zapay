@@ -1,6 +1,7 @@
 import React from 'react';
 import { GetDataProps } from '../../types';
 import Container from './styles';
+import notFound from '../../assets/not-found.png';
 
 interface LaunchProps {
   launch: GetDataProps;
@@ -10,7 +11,10 @@ function LaunchCard({ launch }: LaunchProps) {
   return (
     <Container>
       <div className="imgContainer">
-        <img src={launch.links?.patch.small} alt={launch.name} />
+        <img
+          src={launch.links?.patch.small ? launch.links?.patch.small : notFound}
+          alt={launch.name}
+        />
       </div>
       <div className="nameContainer">
         <h3>

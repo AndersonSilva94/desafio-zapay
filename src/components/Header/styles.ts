@@ -13,9 +13,15 @@ const HeaderContainer = styled.div`
       align-items: center;
       justify-content: space-between;
 
-      h1 {
-        font-size: 2.5rem;
-        color: white
+      div {
+        padding: 0 2rem;
+        background: white;
+        border-radius: 5px;
+
+        img {
+          max-width: 10rem;
+          max-height: 10rem;
+        }
       }
 
       nav {

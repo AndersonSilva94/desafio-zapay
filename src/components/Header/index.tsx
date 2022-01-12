@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import HeaderContainer from './styles';
+import logo from '../../assets/logo.png';
 
 function Header() {
   return (
     <HeaderContainer>
       <header>
-        <h1>SpaceX</h1>
+        <div>
+          <img src={logo} alt="logo" />
+        </div>
         <nav>
           <Link to="/">
             Home
