@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import LaunchCard from '../../components/LaunchCard';
+import Loading from '../../components/Loading';
 import apiSpaceX from '../../services/api';
 import { Container, SectionContainer } from './styles';
 
@@ -27,12 +28,18 @@ function NextLaunch() {
 
   return (
     <Container>
-      <h1>Próximos lançamentos</h1>
-      <SectionContainer>
-        {next && next.map((nextLaunches) => (
-          <LaunchCard key={nextLaunches.name} launch={nextLaunches} />
-        ))}
-      </SectionContainer>
+      {next.length > 0 ? (
+        <>
+          <h1>Próximos lançamentos</h1>
+          <SectionContainer>
+            {next && next.map((nextLaunches) => (
+              <LaunchCard key={nextLaunches.name} launch={nextLaunches} />
+            ))}
+          </SectionContainer>
+        </>
+      ) : (
+        <Loading />
+      )}
     </Container>
   );
 }

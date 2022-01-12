@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import LaunchCard from '../../components/LaunchCard';
+import Loading from '../../components/Loading';
 import apiSpaceX from '../../services/api';
 import { Container, SectionContainer } from './styles';
 
@@ -27,12 +28,18 @@ function OldLaunch() {
 
   return (
     <Container>
-      <h1>Lançamentos Passados</h1>
-      <SectionContainer>
-        {past && past.map((pastLaunches) => (
-          <LaunchCard key={pastLaunches.name} launch={pastLaunches} />
-        ))}
-      </SectionContainer>
+      {past.length > 0 ? (
+        <>
+          <h1>Lançamentos Passados</h1>
+          <SectionContainer>
+            {past && past.map((pastLaunches) => (
+              <LaunchCard key={pastLaunches.name} launch={pastLaunches} />
+            ))}
+          </SectionContainer>
+        </>
+      ) : (
+        <Loading />
+      )}
     </Container>
   );
 }

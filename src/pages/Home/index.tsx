@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import LaunchCard from '../../components/LaunchCard';
+import Loading from '../../components/Loading';
 import apiSpaceX from '../../services/api';
 import { Container, SectionContainer } from './styles';
 
@@ -35,16 +36,20 @@ function Home() {
 
   return (
     <Container>
-      <SectionContainer>
-        <div>
-          <h1>Último lançamento</h1>
-          {latest && <LaunchCard launch={latest} />}
-        </div>
-        <div>
-          <h1>Próximo lançamento</h1>
-          {next && <LaunchCard launch={next} />}
-        </div>
-      </SectionContainer>
+      {next.name ? (
+        <SectionContainer>
+          <div>
+            <h1>Último lançamento</h1>
+            {latest && <LaunchCard launch={latest} />}
+          </div>
+          <div>
+            <h1>Próximo lançamento</h1>
+            {next && <LaunchCard launch={next} />}
+          </div>
+        </SectionContainer>
+      ) : (
+        <Loading />
+      )}
     </Container>
   );
 }
