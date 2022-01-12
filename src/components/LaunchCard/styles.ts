@@ -4,6 +4,7 @@ const Container = styled.div`
   ${() => css`
     width: 100%;
     margin-top: 1rem;
+    box-shadow: 4px 4px 10px gray;
 
     .imgContainer {
       background: white;

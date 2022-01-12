@@ -14,5 +14,10 @@ export const SectionContainer = styled.section`
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 2rem;
+
+    h1 {
+      font-size: 2rem;
+      color: white;
+    }
   `}
 `;

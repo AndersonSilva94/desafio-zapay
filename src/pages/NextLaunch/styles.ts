@@ -6,6 +6,11 @@ export const Container = styled.div`
     margin: 0 auto;
     padding: 2rem 1rem 12rem;
     margin-top: -150px;
+
+    h1 {
+      font-size: 2.5rem;
+      color: white;
+    }
   `}
 `;
 
