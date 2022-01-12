@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ErrorMsg from '../../components/ErrorMsg';
 import LaunchCard from '../../components/LaunchCard';
 import Loading from '../../components/Loading';
 import apiSpaceX from '../../services/api';
@@ -16,30 +17,41 @@ interface GetDataProps {
 
 function NextLaunch() {
   const [next, setNext] = useState<GetDataProps[]>([]);
+  const [err, setErr] = useState(false);
 
   useEffect(() => {
     const getData = async () => {
-      const getNext = await apiSpaceX.get('/upcoming');
-      setNext(getNext.data);
+      try {
+        const getNext = await apiSpaceX.get('/upcoming');
+
+        setNext(getNext.data);
+      } catch (error) {
+        setErr(true);
+      }
     };
 
     getData();
   }, []);
 
+  function renderElements() {
+    if (err) {
+      return <ErrorMsg />;
+    }
+    return (
+      <>
+        <h1>Próximos Lançamentos</h1>
+        <SectionContainer>
+          {next && next.map((nextLaunches) => (
+            <LaunchCard key={nextLaunches.name} launch={nextLaunches} />
+          ))}
+        </SectionContainer>
+      </>
+    );
+  }
+
   return (
     <Container>
-      {next.length > 0 ? (
-        <>
-          <h1>Próximos lançamentos</h1>
-          <SectionContainer>
-            {next && next.map((nextLaunches) => (
-              <LaunchCard key={nextLaunches.name} launch={nextLaunches} />
-            ))}
-          </SectionContainer>
-        </>
-      ) : (
-        <Loading />
-      )}
+      {next.length > 0 || err ? renderElements() : <Loading />}
     </Container>
   );
 }
