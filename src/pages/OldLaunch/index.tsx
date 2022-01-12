@@ -24,6 +24,7 @@ function OldLaunch() {
 
     getData();
   }, []);
+
   return (
     <Container>
       <h1>Lançamentos Passados</h1>
