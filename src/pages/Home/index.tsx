@@ -3,17 +3,8 @@ import ErrorMsg from '../../components/ErrorMsg';
 import LaunchCard from '../../components/LaunchCard';
 import Loading from '../../components/Loading';
 import apiSpaceX from '../../services/api';
+import { GetDataProps } from '../../types';
 import { Container, SectionContainer } from './styles';
-
-interface GetDataProps {
-  links: {
-    patch: {
-      small: string,
-    },
-    wikipedia: string,
-  },
-  name: string,
-}
 
 function Home() {
   const [latest, setLatest] = useState<GetDataProps>(

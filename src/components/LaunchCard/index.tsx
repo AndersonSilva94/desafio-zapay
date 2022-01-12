@@ -1,16 +1,9 @@
 import React from 'react';
+import { GetDataProps } from '../../types';
 import Container from './styles';
 
 interface LaunchProps {
-  launch: {
-    links: {
-      patch: {
-        small: string,
-      },
-      wikipedia: string,
-    },
-    name: string,
-  }
+  launch: GetDataProps;
 }
 
 function LaunchCard({ launch }: LaunchProps) {
