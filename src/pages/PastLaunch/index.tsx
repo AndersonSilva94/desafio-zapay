@@ -6,7 +6,7 @@ import apiSpaceX from '../../services/api';
 import { GetDataProps } from '../../types';
 import { Container, SectionContainer } from './styles';
 
-function OldLaunch() {
+function PastLaunch() {
   const [past, setPast] = useState<GetDataProps[]>([]);
   const [err, setErr] = useState(false);
 
@@ -47,4 +47,4 @@ function OldLaunch() {
   );
 }
 
-export default OldLaunch;
+export default PastLaunch;

@@ -14,7 +14,7 @@ function Header() {
           <Link to="/">
             Home
           </Link>
-          <Link to="/old">
+          <Link to="/past">
             Lançamentos Passados
           </Link>
           <Link to="/next">
