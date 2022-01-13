@@ -20,7 +20,7 @@ const Container = styled.div`
     }
 
     .nameContainer {
-      background: black;
+      background: var(--header);
       display: flex;
       align-items: center;
       justify-content: center;
