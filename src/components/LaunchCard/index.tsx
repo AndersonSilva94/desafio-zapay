@@ -12,7 +12,7 @@ function LaunchCard({ launch }: LaunchProps) {
     <Container>
       <div className="imgContainer">
         <img
-          src={launch.links?.patch.small ? launch.links?.patch.small : notFound}
+          src={launch.links.patch.small ? launch.links.patch.small : notFound}
           alt={launch.name}
         />
       </div>

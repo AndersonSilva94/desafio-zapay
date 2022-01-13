@@ -1,4 +1,4 @@
-const mock = {
+export const mock = {
   links: {
     patch: {
       small: 'https://imgur.com/BrW201S.png',
@@ -8,4 +8,12 @@ const mock = {
   name: 'Starlink 4-5 (v1.5)',
 };
 
-export default mock;
+export const mockWithoutImg = {
+  links: {
+    patch: {
+      small: '',
+    },
+    wikipedia: '',
+  },
+  name: 'Transporter-3',
+};

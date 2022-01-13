@@ -1,7 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import LaunchCard from '.';
-import mock from './mock';
+import { mock, mockWithoutImg } from './mock';
+import notFound from '../../assets/not-found.png';
 
 describe('<LaunchCard />', () => {
   it('Se LaunchCard possui uma imagem', () => {
@@ -20,5 +21,11 @@ describe('<LaunchCard />', () => {
     const link = getByRole('link') as HTMLLinkElement;
     expect(link.innerHTML).toBe('Starlink 4-5 (v1.5)');
     expect(link.href).toBe('https://en.wikipedia.org/wiki/Starlink');
+  });
+
+  it('Se LaunchCard não possuir uma imagem, retorna a padrão', () => {
+    const { getByRole } = render(<LaunchCard launch={mockWithoutImg} />);
+    const img = getByRole('img') as HTMLImageElement;
+    expect(img.src).toContain(notFound);
   });
 });
