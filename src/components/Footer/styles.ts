@@ -4,7 +4,6 @@ const Container = styled.footer`
   ${() => css`
     width: 100%;
     padding: 1rem;
-    bottom: 0;
     background: var(--header);
     display: flex;
     align-items: center;

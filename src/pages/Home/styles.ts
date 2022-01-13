@@ -19,5 +19,15 @@ export const SectionContainer = styled.section`
       font-size: 2rem;
       color: white;
     }
+
+    @media (max-width: 500px) {
+      grid-template-columns: 1fr;
+
+      div:nth-of-type(2) {
+        h1 {
+          color: black;
+        }
+      }
+    }
   `}
 `;

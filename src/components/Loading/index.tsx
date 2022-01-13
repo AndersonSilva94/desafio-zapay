@@ -15,7 +15,7 @@ function Loading() {
 
   return (
     <Container>
-      <Lottie options={defaultOptions} height={400} width={400} />
+      <Lottie options={defaultOptions} height={350} width={350} />
     </Container>
   );
 }

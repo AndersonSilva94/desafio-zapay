@@ -16,7 +16,7 @@ const HeaderContainer = styled.div`
       div {
         padding: 0 2rem;
         background: white;
-        border-radius: 5px;
+        border-radius: 50%;
 
         img {
           max-width: 10rem;
@@ -45,6 +45,17 @@ const HeaderContainer = styled.div`
             color: var(--header);
           }
         }
+      }
+      
+      @media (max-width: 500px) {
+        div {
+        padding: 0 1rem;
+
+        img {
+          max-width: 8rem;
+          max-height: 8rem;
+        }
+      }
       }
     }
   `}
