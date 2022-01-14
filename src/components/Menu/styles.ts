@@ -39,13 +39,12 @@ const MenuContainer = styled.nav<MenuContainerProps>`
         position: fixed;
         transform: ${open ? 'translateX(0)' : 'translateX(100%)'} ;
         transition: transform 0.3s ease-in-out;
-        margin-top: 10vh;
         top: 0;
         right: 0;
-        height: 90vh;
+        height: 100vh;
         background: var(--header);
         width: 50vw;
-        padding-top: 2rem;
+        padding-top: 8rem;
         z-index: 20;
       }
     }

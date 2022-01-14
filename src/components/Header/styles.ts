@@ -45,8 +45,9 @@ export const MenuIcon = styled(BiMenu)`
     font-size: 30px;
     cursor: pointer;
     display: none;
-
+    
     @media (max-width: 800px) {
+      z-index: 100;
       display: block;
       margin-right: -400px;
     }
