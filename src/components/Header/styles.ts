@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
+import { BiMenu } from 'react-icons/bi';
 
-const HeaderContainer = styled.div`
+export const HeaderContainer = styled.div`
   ${() => css`
     width: 100%;
     background: var(--header);
@@ -13,7 +14,7 @@ const HeaderContainer = styled.div`
       align-items: center;
       justify-content: space-between;
 
-      div {
+      .logo {
         padding: 0 2rem;
         background: white;
         border-radius: 50%;
@@ -23,42 +24,39 @@ const HeaderContainer = styled.div`
           max-height: 10rem;
         }
       }
-
-      nav {
-        margin-left: 5rem;
-
-        a {
-          display: inline-block;
-          position: relative;
-          padding: 0.8rem;
-          color: white;
-
-          transition: color 0.2s;
-
-          & + a {
-            margin-left: 2rem;
-          }
-
-          &:hover {
-            background: white;
-            border-radius: 3px;
-            color: var(--header);
-          }
-        }
-      }
       
       @media (max-width: 500px) {
-        div {
-        padding: 0 1rem;
+        .logo {
+          padding: 0 1rem;
 
-        img {
-          max-width: 8rem;
-          max-height: 8rem;
+          img {
+            max-width: 8rem;
+            max-height: 8rem;
+          }
         }
-      }
       }
     }
   `}
 `;
 
-export default HeaderContainer;
+export const MenuIcon = styled(BiMenu)`
+  ${() => css`
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+
+    @media (max-width: 800px) {
+      display: block;
+      margin-right: -400px;
+    }
+
+    @media (max-width: 600px) {
+      margin-right: -300px;
+    }
+
+    @media (max-width: 414px) {
+      margin-right: -200px;
+    }
+  `}
+`;

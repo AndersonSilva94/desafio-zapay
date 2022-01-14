@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Lexend', sans-serif;
+    overflow-x: hidden;
   }
 
   button {

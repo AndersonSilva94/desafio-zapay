@@ -1,26 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import HeaderContainer from './styles';
+import React, { useState } from 'react';
+import { HeaderContainer, MenuIcon } from './styles';
 import logo from '../../assets/logo.png';
+import Menu from '../Menu';
 
 function Header() {
+  const [openMenu, setOpenMenu] = useState(false);
+
   return (
     <HeaderContainer>
       <header>
-        <div>
+        <div className="logo">
           <img src={logo} alt="logo" />
         </div>
-        <nav>
-          <Link to="/">
-            Home
-          </Link>
-          <Link to="/past">
-            Lançamentos Passados
-          </Link>
-          <Link to="/next">
-            Próximos Lançamentos
-          </Link>
-        </nav>
+        <MenuIcon onClick={() => setOpenMenu(!openMenu)} />
+        <Menu open={openMenu} />
       </header>
     </HeaderContainer>
   );
