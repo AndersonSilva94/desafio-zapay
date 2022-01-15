@@ -4,7 +4,7 @@ import LaunchCard from '../../components/LaunchCard';
 import Loading from '../../components/Loading';
 import apiSpaceX from '../../services/api';
 import { GetDataProps } from '../../types';
-import { Container, SectionContainer } from './styles';
+import { PasttLaunchContainer, SectionContainer } from './styles';
 
 function PastLaunch() {
   const [past, setPast] = useState<GetDataProps[]>([]);
@@ -41,9 +41,9 @@ function PastLaunch() {
   }
 
   return (
-    <Container>
+    <PasttLaunchContainer>
       {past.length > 0 || err ? renderElements() : <Loading />}
-    </Container>
+    </PasttLaunchContainer>
   );
 }
 

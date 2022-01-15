@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const Container = styled.footer`
+const FooterContainer = styled.footer`
   ${() => css`
     width: 100%;
     padding: 1rem;
@@ -21,4 +21,4 @@ const Container = styled.footer`
   `}
 `;
 
-export default Container;
+export default FooterContainer;

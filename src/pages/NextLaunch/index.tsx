@@ -4,7 +4,7 @@ import LaunchCard from '../../components/LaunchCard';
 import Loading from '../../components/Loading';
 import apiSpaceX from '../../services/api';
 import { GetDataProps } from '../../types';
-import { Container, SectionContainer } from './styles';
+import { NextLaunchContainer, SectionContainer } from './styles';
 
 function NextLaunch() {
   const [next, setNext] = useState<GetDataProps[]>([]);
@@ -41,9 +41,9 @@ function NextLaunch() {
   }
 
   return (
-    <Container>
+    <NextLaunchContainer>
       {next.length > 0 || err ? renderElements() : <Loading />}
-    </Container>
+    </NextLaunchContainer>
   );
 }
 

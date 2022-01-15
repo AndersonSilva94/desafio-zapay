@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+export const NextLaunchContainer = styled.div`
   ${() => css`
     max-width: 1120px;
     margin: 0 auto;

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const Container = styled.div`
+const LaunchCardContainer = styled.div`
   ${() => css`
     width: 100%;
     margin-top: 1rem;
@@ -40,4 +40,4 @@ const Container = styled.div`
   `}
 `;
 
-export default Container;
+export default LaunchCardContainer;

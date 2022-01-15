@@ -1,9 +1,9 @@
 import React from 'react';
-import Container from './styles';
+import FooterContainer from './styles';
 
 function Footer() {
   return (
-    <Container>
+    <FooterContainer>
       ⌨ com 💜 por
       &nbsp;
       <a href="https://www.linkedin.com/in/andssilva/" target="_blank" rel="noreferrer">
@@ -11,7 +11,7 @@ function Footer() {
       </a>
       &nbsp;
       😊
-    </Container>
+    </FooterContainer>
   );
 }
 

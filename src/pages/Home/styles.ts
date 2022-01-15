@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+export const HomeContainer = styled.div`
   ${() => css`
     max-width: 1120px;
     margin: 0 auto;
@@ -25,7 +25,7 @@ export const SectionContainer = styled.section`
 
       div:nth-of-type(2) {
         h1 {
-          color: black;
+          color: var(--header);
         }
       }
     }

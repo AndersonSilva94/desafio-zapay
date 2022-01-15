@@ -4,7 +4,7 @@ import LaunchCard from '../../components/LaunchCard';
 import Loading from '../../components/Loading';
 import apiSpaceX from '../../services/api';
 import { GetDataProps } from '../../types';
-import { Container, SectionContainer } from './styles';
+import { HomeContainer, SectionContainer } from './styles';
 
 function Home() {
   const [latest, setLatest] = useState<GetDataProps>(
@@ -50,9 +50,9 @@ function Home() {
   }
 
   return (
-    <Container>
+    <HomeContainer>
       {next.name || err ? renderElements() : <Loading />}
-    </Container>
+    </HomeContainer>
   );
 }
 

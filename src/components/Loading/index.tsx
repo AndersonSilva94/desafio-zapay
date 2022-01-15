@@ -1,7 +1,7 @@
 import React from 'react';
 import Lottie from 'react-lottie';
 import rocketAnimation from '../../assets/rocket-loader.json';
-import Container from './styles';
+import LoadingContainer from './styles';
 
 function Loading() {
   const defaultOptions = {
@@ -14,9 +14,9 @@ function Loading() {
   };
 
   return (
-    <Container>
+    <LoadingContainer>
       <Lottie options={defaultOptions} height={350} width={350} />
-    </Container>
+    </LoadingContainer>
   );
 }
 

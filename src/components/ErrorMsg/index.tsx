@@ -1,11 +1,11 @@
 import React from 'react';
-import Container from './styles';
+import ErrorMsgContainer from './styles';
 
 function ErrorMsg() {
   return (
-    <Container>
+    <ErrorMsgContainer>
       <h1>Erro no servidor</h1>
-    </Container>
+    </ErrorMsgContainer>
   );
 }
 

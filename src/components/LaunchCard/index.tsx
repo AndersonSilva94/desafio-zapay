@@ -1,6 +1,6 @@
 import React from 'react';
 import { GetDataProps } from '../../types';
-import Container from './styles';
+import LaunchCardContainer from './styles';
 import notFound from '../../assets/not-found.png';
 
 interface LaunchProps {
@@ -9,7 +9,7 @@ interface LaunchProps {
 
 function LaunchCard({ launch }: LaunchProps) {
   return (
-    <Container>
+    <LaunchCardContainer>
       <div className="imgContainer">
         <img
           src={launch.links.patch.small ? launch.links.patch.small : notFound}
@@ -23,7 +23,7 @@ function LaunchCard({ launch }: LaunchProps) {
           </a>
         </h3>
       </div>
-    </Container>
+    </LaunchCardContainer>
   );
 }
 

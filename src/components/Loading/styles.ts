@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const Container = styled.div`
+const LoadingContainer = styled.div`
   ${() => css`
     max-width: 1120px;
     margin: 0 auto;
@@ -9,4 +9,4 @@ const Container = styled.div`
   `}
 `;
 
-export default Container;
+export default LoadingContainer;

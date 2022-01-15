@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const Container = styled.div`
+const ErrorMsgContainer = styled.div`
   ${() => css`
     max-width: 1120px;
     margin: 1rem auto 0;
@@ -16,4 +16,4 @@ const Container = styled.div`
   `}
 `;
 
-export default Container;
+export default ErrorMsgContainer;
