@@ -11,6 +11,7 @@ const Container = styled.div`
       height: 18rem;
 
       img {
+        object-fit: contain;
         max-width: 100%;
         width: 100%;
 
@@ -26,6 +27,7 @@ const Container = styled.div`
       justify-content: center;
       padding: 0.8rem 0;
       cursor: pointer;
+      
 
       a {
         color: white;

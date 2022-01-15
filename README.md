@@ -7,7 +7,7 @@
 
 ## Sobre
 
-![Captura de tela de 2022-01-13 06-15-53](https://user-images.githubusercontent.com/52717632/149311647-6d97fe8a-a308-4946-bc33-0469976a2e11.jpg)
+![Captura de tela de 2022-01-15 08-25-37](https://user-images.githubusercontent.com/52717632/149621763-7fe827bf-2f4b-425f-835b-6b1fa39cec96.jpg)
 
 > O projeto consiste na criação de uma aplicação que consulta a api de [SpaceX](https://github.com/r-spacex/SpaceX-API/tree/master/docs) e busca os dados de Último Lançamento, Próximo Lançamento, Lançamentos Passados e Próximos Lançamentos.
 
