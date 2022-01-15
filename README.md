@@ -47,6 +47,11 @@ Ter instalado em sua máquina as seguintes ferramentas:
     $ yarn start
   ```
 
+5. Você pode testar a aplicação, basta rodar o comando:
+  ```bash
+    $ yarn test
+  ```
+
 * Será aberta uma página com a url: http://localhost:3000/
 
 OBS: Você pode verificar o projeto em ação [aqui](https://desafio-zapay.netlify.app/)
