@@ -10,7 +10,10 @@
 ![Captura de tela de 2022-01-15 08-25-37](https://user-images.githubusercontent.com/52717632/149621763-7fe827bf-2f4b-425f-835b-6b1fa39cec96.jpg)
 
 > O projeto consiste na criação de uma aplicação que consulta a api de [SpaceX](https://github.com/r-spacex/SpaceX-API/tree/master/docs) e busca os dados de Último Lançamento, Próximo Lançamento, Lançamentos Passados e Próximos Lançamentos. Foram criadas três páginas, e para navegar entre elas, basta clicar nos seus respectivos botões no menu superior. Na 'Home' encontram-se os dados do Último Lançamento e Próximo Lançamento. Na página 'Lançamentos Passados' encontram-se os dados de todos os últimos lançamentos realizados. Na página 'Próximos Lançamentos' encontram-se os dados dos lançamentos por vir.
+
 > Também é possível ver a aplicação em sua versão mobile (em resoluções de 414px * 736px, por exemplo).
+
+> PS: É possível clicar nas legendas das imagens e ver mais informações sobre o lançamento correspondente.
 
 ## Tecnologias utilizadas na construção do projeto
 - [React](https://pt-br.reactjs.org/)
