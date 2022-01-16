@@ -16,7 +16,7 @@ describe('<PastLaunch />', () => {
 
   it('Se a página possui uma animação ao iniciar', async () => {
     mockedAxios.get.mockResolvedValue({
-      data: {},
+      data: [],
     });
     act(() => {
       render(<PastLaunch />);
