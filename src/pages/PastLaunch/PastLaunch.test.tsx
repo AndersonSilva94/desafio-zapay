@@ -1,5 +1,8 @@
 import React from 'react';
-import { render, cleanup, waitFor } from '@testing-library/react';
+import {
+  render, cleanup, waitFor, screen,
+} from '@testing-library/react';
+import { act } from 'react-dom/test-utils';
 import axios from 'axios';
 import PastLaunch from '.';
 import apiSpaceX from '../../services/api';
@@ -11,9 +14,16 @@ const mockedAxios = apiSpaceX as jest.Mocked<typeof axios>;
 describe('<PastLaunch />', () => {
   afterEach(cleanup);
 
-  it('Se a página possui uma animação ao iniciar', () => {
-    const { getByRole } = render(<PastLaunch />);
-    const animation = getByRole('button', { name: 'animation' });
+  it('Se a página possui uma animação ao iniciar', async () => {
+    mockedAxios.get.mockResolvedValue({
+      data: {},
+    });
+    act(() => {
+      render(<PastLaunch />);
+    });
+    const animation = await waitFor(
+      () => screen.getByTestId('img-loading'),
+    );
     expect(animation).toBeInTheDocument();
   });
 
@@ -21,10 +31,12 @@ describe('<PastLaunch />', () => {
     mockedAxios.get.mockResolvedValue({
       data: mock,
     });
-    const { getByText } = render(<PastLaunch />);
+    act(() => {
+      render(<PastLaunch />);
+    });
 
     const getTitle = await waitFor(
-      () => getByText('Lançamentos Passados') as HTMLHeadingElement,
+      () => screen.getByText('Lançamentos Passados') as HTMLHeadingElement,
     );
 
     expect(getTitle).toBeInTheDocument();
@@ -34,17 +46,19 @@ describe('<PastLaunch />', () => {
     mockedAxios.get.mockResolvedValue({
       data: mock,
     });
-    const { getAllByRole } = render(<PastLaunch />);
+    act(() => {
+      render(<PastLaunch />);
+    });
 
     const getNames = await waitFor(
-      () => getAllByRole('heading', { level: 3 }) as HTMLHeadingElement[],
+      () => screen.getAllByRole('heading', { level: 3 }) as HTMLHeadingElement[],
     );
 
     expect(getNames[0].textContent).toBe('FalconSat');
     expect(getNames[1].textContent).toBe('DemoSat');
 
     const getImages = await waitFor(
-      () => getAllByRole('img') as HTMLImageElement[],
+      () => screen.getAllByRole('img') as HTMLImageElement[],
     );
 
     expect(getImages[0].src).toBe('https://images2.imgbox.com/3c/0e/T8iJcSN3_o.png');
@@ -56,10 +70,12 @@ describe('<PastLaunch />', () => {
       data: 'Not Found',
     });
 
-    const { getByText } = render(<PastLaunch />);
+    act(() => {
+      render(<PastLaunch />);
+    });
 
     const getError = await waitFor(
-      () => getByText('Erro no servidor'),
+      () => screen.getByText('Erro no servidor'),
     );
 
     expect(getError).toBeInTheDocument();
