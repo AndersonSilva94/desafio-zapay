@@ -1,6 +1,9 @@
 import React from 'react';
-import { render, cleanup, waitFor } from '@testing-library/react';
+import {
+  render, cleanup, waitFor, screen,
+} from '@testing-library/react';
 import axios from 'axios';
+import { act } from 'react-dom/test-utils';
 import NextLaunch from '.';
 import apiSpaceX from '../../services/api';
 import mock from './mock';
@@ -12,9 +15,16 @@ const mockedAxios = apiSpaceX as jest.Mocked<typeof axios>;
 describe('<NextLaunch />', () => {
   afterEach(cleanup);
 
-  it('Se a página possui uma animação ao iniciar', () => {
-    const { getByRole } = render(<NextLaunch />);
-    const animation = getByRole('button', { name: 'animation' });
+  it('Se a página possui uma animação ao iniciar', async () => {
+    mockedAxios.get.mockResolvedValue({
+      data: {},
+    });
+    act(() => {
+      render(<NextLaunch />);
+    });
+    const animation = await waitFor(
+      () => screen.getByTestId('img-loading'),
+    );
     expect(animation).toBeInTheDocument();
   });
 
@@ -22,10 +32,12 @@ describe('<NextLaunch />', () => {
     mockedAxios.get.mockResolvedValue({
       data: mock,
     });
-    const { getByText } = render(<NextLaunch />);
+    act(() => {
+      render(<NextLaunch />);
+    });
 
     const getTitle = await waitFor(
-      () => getByText('Próximos Lançamentos') as HTMLHeadingElement,
+      () => screen.getByText('Próximos Lançamentos') as HTMLHeadingElement,
     );
 
     expect(getTitle).toBeInTheDocument();
@@ -35,17 +47,19 @@ describe('<NextLaunch />', () => {
     mockedAxios.get.mockResolvedValue({
       data: mock,
     });
-    const { getAllByRole } = render(<NextLaunch />);
+    act(() => {
+      render(<NextLaunch />);
+    });
 
     const getNames = await waitFor(
-      () => getAllByRole('heading', { level: 3 }) as HTMLHeadingElement[],
+      () => screen.getAllByRole('heading', { level: 3 }) as HTMLHeadingElement[],
     );
 
     expect(getNames[0].textContent).toBe('Starlink 4-6 (v1.5)');
     expect(getNames[1].textContent).toBe('CSG-2');
 
     const getImages = await waitFor(
-      () => getAllByRole('img') as HTMLImageElement[],
+      () => screen.getAllByRole('img') as HTMLImageElement[],
     );
 
     expect(getImages[0].src).toBe('https://imgur.com/BrW201S.png');

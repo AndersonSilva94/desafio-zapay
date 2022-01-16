@@ -14,7 +14,7 @@ function Loading() {
   };
 
   return (
-    <LoadingContainer>
+    <LoadingContainer data-testid="img-loading">
       <Lottie options={defaultOptions} height={350} width={350} />
     </LoadingContainer>
   );
