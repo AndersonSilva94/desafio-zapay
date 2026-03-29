@@ -2,7 +2,6 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    jest: true,
   },
   extends: [
     'plugin:react/recommended',
@@ -32,4 +31,21 @@ module.exports = {
     'react/jsx-filename-extension': ['warn', { extensions: ['.tsx'] }],
     'import/extensions': 'off',
   },
+  overrides: [
+    {
+      files: ['**/*.{test,spec}.{ts,tsx}', 'src/setupTests.ts'],
+      globals: {
+        describe: 'readonly',
+        it: 'readonly',
+        expect: 'readonly',
+        vi: 'readonly',
+        beforeEach: 'readonly',
+        afterEach: 'readonly',
+        jest: 'readonly',
+      },
+      rules: {
+        'import/no-extraneous-dependencies': 'off',
+      },
+    },
+  ],
 };

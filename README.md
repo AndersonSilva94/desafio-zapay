@@ -16,53 +16,77 @@
 > PS: É possível clicar nas legendas das imagens e ver mais informações sobre o lançamento correspondente.
 
 ## Tecnologias utilizadas na construção do projeto
+
 - [React](https://pt-br.reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [React Router](https://v5.reactrouter.com/web/guides/quick-start)
+- [Vite](https://vitejs.dev/)
+- [React Router](https://reactrouter.com/)
 - [Styled-Components](https://styled-components.com/)
 - [Axios](https://axios-http.com/docs/example)
-- [Jest](https://jestjs.io/pt-BR/)
+- [Vitest](https://vitest.dev/) (testes)
 - [ESLint](https://eslint.org/)
 
 ## Pré-requisitos
+
 Ter instalado em sua máquina as seguintes ferramentas:
 
-* [Git](https://git-scm.com), 
-* [Node.js](https://nodejs.org/en/),
-* [Yarn](https://yarnpkg.com/).
+- [Git](https://git-scm.com)
+- [Node.js](https://nodejs.org/) (recomendado: LTS atual)
 
-## Para rodar o projeto localmente:
-1. Clone o repositório
-  ```bash
-    $ git clone https://github.com/AndersonSilva94/desafio-zapay.git
-  ```
-2. Entre na pasta do repositório que você acabou de clonar:
-  ```bash
-    $ cd desafio-zapay
-  ```
+## Para rodar o projeto localmente
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/AndersonSilva94/desafio-zapay.git
+   ```
+
+2. Entre na pasta do repositório:
+
+   ```bash
+   cd desafio-zapay
+   ```
 
 3. Instale as dependências:
-  ```bash
-    $ yarn install
-  ```
 
-4. Rode a aplicação:
-  ```bash
-    $ yarn start
-  ```
-  * Será aberta uma página com a url: http://localhost:3000/
+   ```bash
+   npm install
+   ```
 
+4. Rode a aplicação em desenvolvimento:
 
-5. Você pode testar a aplicação, basta rodar o comando:
-  ```bash
-    $ yarn test
-  ```
+   ```bash
+   npm start
+   ```
 
- * O resultado deverá ser:
-![Captura de tela de 2022-01-16 13-36-05](https://user-images.githubusercontent.com/52717632/149671477-53f00a16-a76f-48e1-ab6f-022de3e8ea71.jpg)
+   A URL padrão é `http://localhost:3000/` (porta configurada no Vite).
 
+5. Build de produção:
 
-OBS: Você pode verificar o projeto em ação [aqui](https://desafio-zapay.netlify.app/)
+   ```bash
+   npm run build
+   ```
+
+   Os arquivos são gerados na pasta `build/`.
+
+6. Pré-visualizar o build:
+
+   ```bash
+   npm run preview
+   ```
+
+7. Testes:
+
+   ```bash
+   npm test
+   ```
+
+   Cobertura (execução única):
+
+   ```bash
+   npm run test-coverage
+   ```
 
 ---
+
 :keyboard: com :purple_heart: por [Anderson Silva (Andy)](https://www.linkedin.com/in/andssilva/) 😊
