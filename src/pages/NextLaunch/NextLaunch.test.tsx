@@ -1,9 +1,8 @@
-import React from 'react';
 import {
   render, cleanup, waitFor, screen,
 } from '@testing-library/react';
 import axios from 'axios';
-import { act } from 'react-dom/test-utils';
+import React, { act } from 'react';
 import NextLaunch from '.';
 import apiSpaceX from '../../services/api';
 import mock from './mock';

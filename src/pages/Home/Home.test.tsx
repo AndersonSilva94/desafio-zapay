@@ -1,8 +1,7 @@
-import React from 'react';
 import {
   render, cleanup, waitFor, screen,
 } from '@testing-library/react';
-import { act } from 'react-dom/test-utils';
+import React, { act } from 'react';
 import axios from 'axios';
 import Home from '.';
 import apiSpaceX from '../../services/api';
