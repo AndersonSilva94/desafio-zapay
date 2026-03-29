@@ -1,7 +1,9 @@
-// jest-dom adds custom jest matchers for asserting on DOM nodes.
-// allows you to do things like:
-// expect(element).toHaveTextContent(/react/i)
-// learn more: https://github.com/testing-library/jest-dom
-import '@testing-library/jest-dom';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import 'jest-canvas-mock';
+import { createRequire } from 'node:module';
+import { vi } from 'vitest';
+
+import '@testing-library/jest-dom/vitest';
+
+const require = createRequire(import.meta.url);
+
+globalThis.jest = vi as unknown as typeof jest;
+require('jest-canvas-mock');

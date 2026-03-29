@@ -2,16 +2,25 @@ import {
   render, cleanup, waitFor, screen,
 } from '@testing-library/react';
 import React, { act } from 'react';
-import axios from 'axios';
+import { vi } from 'vitest';
 import Home from '.';
 import apiSpaceX from '../../services/api';
 import { mockLatest, mockNext } from './mock';
 import notFound from '../../assets/not-found.png';
 
-jest.mock('../../services/api');
-const mockedAxios = apiSpaceX as jest.Mocked<typeof axios>;
+vi.mock('../../services/api', () => ({
+  default: {
+    get: vi.fn(),
+  },
+}));
+
+const mockedAxios = vi.mocked(apiSpaceX);
 
 describe('<Home />', () => {
+  beforeEach(() => {
+    mockedAxios.get.mockReset();
+  });
+
   afterEach(cleanup);
 
   it('Se a página possui uma animação ao iniciar', async () => {
