@@ -28,6 +28,7 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    'linebreak-style': 'off',
     'react/jsx-filename-extension': ['warn', { extensions: ['.tsx'] }],
     'import/extensions': 'off',
   },
