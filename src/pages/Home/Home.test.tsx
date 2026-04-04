@@ -55,7 +55,7 @@ describe('<Home />', () => {
       () => screen.getAllByRole('heading', { level: 1 }) as HTMLHeadingElement[],
     );
 
-    expect(getTitle[0].textContent).toBe('Último lançamento');
+    expect(getTitle[0].textContent).toBe('Último lançamento realizado');
     expect(getTitle[1].textContent).toBe('Próximo lançamento');
   });
 
