@@ -1,18 +1,26 @@
-import React from 'react';
 import {
   render, cleanup, waitFor, screen,
 } from '@testing-library/react';
-import axios from 'axios';
-import { act } from 'react-dom/test-utils';
+import React, { act } from 'react';
+import { vi } from 'vitest';
 import NextLaunch from '.';
 import apiSpaceX from '../../services/api';
 import mock from './mock';
 import notFound from '../../assets/not-found.png';
 
-jest.mock('../../services/api');
-const mockedAxios = apiSpaceX as jest.Mocked<typeof axios>;
+vi.mock('../../services/api', () => ({
+  default: {
+    get: vi.fn(),
+  },
+}));
+
+const mockedAxios = vi.mocked(apiSpaceX);
 
 describe('<NextLaunch />', () => {
+  beforeEach(() => {
+    mockedAxios.get.mockReset();
+  });
+
   afterEach(cleanup);
 
   it('Se a página possui uma animação ao iniciar', async () => {

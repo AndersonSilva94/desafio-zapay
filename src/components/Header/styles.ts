@@ -1,5 +1,8 @@
+import type { FC, SVGProps } from 'react';
 import styled, { css } from 'styled-components';
 import { BiMenu } from 'react-icons/bi';
+
+const MenuGlyph = BiMenu as FC<SVGProps<SVGSVGElement>>;
 
 export const HeaderContainer = styled.div`
   ${() => css`
@@ -39,7 +42,7 @@ export const HeaderContainer = styled.div`
   `}
 `;
 
-export const MenuIcon = styled(BiMenu)`
+export const MenuIcon = styled(MenuGlyph)`
   ${() => css`
     color: white;
     font-size: 30px;

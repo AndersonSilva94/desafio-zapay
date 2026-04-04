@@ -1,18 +1,26 @@
-import React from 'react';
 import {
   render, cleanup, waitFor, screen,
 } from '@testing-library/react';
-import { act } from 'react-dom/test-utils';
-import axios from 'axios';
+import React, { act } from 'react';
+import { vi } from 'vitest';
 import Home from '.';
 import apiSpaceX from '../../services/api';
 import { mockLatest, mockNext } from './mock';
 import notFound from '../../assets/not-found.png';
 
-jest.mock('../../services/api');
-const mockedAxios = apiSpaceX as jest.Mocked<typeof axios>;
+vi.mock('../../services/api', () => ({
+  default: {
+    get: vi.fn(),
+  },
+}));
+
+const mockedAxios = vi.mocked(apiSpaceX);
 
 describe('<Home />', () => {
+  beforeEach(() => {
+    mockedAxios.get.mockReset();
+  });
+
   afterEach(cleanup);
 
   it('Se a página possui uma animação ao iniciar', async () => {
@@ -47,7 +55,7 @@ describe('<Home />', () => {
       () => screen.getAllByRole('heading', { level: 1 }) as HTMLHeadingElement[],
     );
 
-    expect(getTitle[0].textContent).toBe('Último lançamento');
+    expect(getTitle[0].textContent).toBe('Último lançamento realizado');
     expect(getTitle[1].textContent).toBe('Próximo lançamento');
   });
 

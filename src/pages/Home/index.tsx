@@ -38,7 +38,7 @@ function Home() {
     return (
       <SectionContainer>
         <div>
-          <h1>Último lançamento</h1>
+          <h1>Último lançamento realizado</h1>
           {latest && <LaunchCard launch={latest} />}
         </div>
         <div>
